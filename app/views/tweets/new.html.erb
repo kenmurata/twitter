@@ -1,7 +1,2 @@
-<%= form_for(@tweet) do |f| %>
-    <%= f.label :content %>
-    <%= f.text_field :content %>
-    <br>
-    <%= f.submit "登録" %>
-<% end %>
-<%= link_to "つぶやきを見る", tweets_path %>
+<h2>つぶやく</h2>
+<%= render 'form' %>
