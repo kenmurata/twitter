@@ -6,7 +6,11 @@ class TweetsController < ApplicationController
     end
     
     def new
-        @tweet = Tweet.new
+        if params[:back]
+            @tweet = Tweet.new(tweets_params)
+        else
+            @tweet = Tweet.new
+        end
     end
     
     def create
@@ -19,6 +23,12 @@ class TweetsController < ApplicationController
     end
     
     def edit
+        #@tweet = Tweet.new(tweets_params)
+    end
+    
+    def confirm
+        @tweet = Tweet.new(tweets_params)
+        #render :new if @tweet.invalid?
     end
     
     def update
