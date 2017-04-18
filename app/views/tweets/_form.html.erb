@@ -11,9 +11,9 @@
     <% end %>
     
     <%= f.label :content %>
-    <%= f.text_field :content %>
+    <%= f.text_field :content , class: 'form-control' %>
     <br>
-    <%= f.submit %>
+    <%= f.submit 'つぶやく', class: 'btn btn-primary btn-block' %>
 <% end %>
 
 <%= link_to "つぶやきを見る", tweets_path %>
