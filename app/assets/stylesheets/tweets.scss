@@ -40,20 +40,50 @@ body {
   text-align: center;
 }
 
-.wrapper {
-  margin-bottom: 74px;
-  padding: 20px 20px 20px 35px;
-  .row {
-    border-bottom: 1px solid #ccc;
-    padding: 20px;
-    text-align: left;
-    word-wrap: break-word;
-  }
-}
 input[type="submit"].btn-block {
   margin: 15px 0;
 }
 
-.container {
+.container#profile-area {
   padding-bottom: 85px;
+  background-color: #EEEEEE;
+}
+
+#header-area-1 {
+  background-color: #00A0E9;
+  height: 140px;
+}
+#header-area-2 {
+  background-color: #FFF;
+  height: 40px;
+  border-bottom: 2px solid gray;
+}
+
+#profile {
+  h3 {
+    text-align: left;
+  }
+  p {
+    text-align: left;
+  }
+}
+
+#over-image {
+  max-height: 100px;
+  width: auto;
+  border: 2px solid white;
+}
+
+#tweet-area {
+  background-color: #FFF;
+  margin: 2px 2px 2px 2px;
+  p {
+    text-align: left;
+  }
+}
+
+#tweet-icon-image {
+  max-height: 50px;
+  width: auto;
+  border: 2px solid white;
 }

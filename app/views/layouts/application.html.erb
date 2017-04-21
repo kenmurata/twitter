@@ -9,13 +9,34 @@
 </head>
 <body>
   <header>
-    <ul>
-      <li><%= link_to image_tag('home.png', :width => '50', :height => '20'), root_path %></li>
-      <li><%= link_to image_tag('moment.png', :width => '50', :height => '20'), root_path %></li>
-      <li><%= link_to image_tag('notice.png', :width => '50', :height => '20'), root_path %></li>
-      <li><%= link_to image_tag('message.png', :width => '50', :height => '20'), root_path %></li>
-      <li><%= link_to image_tag('twitter.png',:width => '25', :height => '25'), root_path %></li>
-    </ul>
+    <div class="container-fluid">
+      <div class="row">
+        <ul>
+          <div class="col-xs-6 col-md-offset-2 col-md-4">
+            <div class="row">
+              <div class="col-xs-2 col-md-2">
+                <li><%= link_to image_tag('home.png', :width => '50', :height => '20'), root_path %></li>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <li><%= link_to image_tag('moment.png', :width => '50', :height => '20'), root_path %></li>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <li><%= link_to image_tag('notice.png', :width => '50', :height => '20'), root_path %></li>
+              </div>
+              <div class="col-xs-2 col-md-2">
+                <li><%= link_to image_tag('message.png', :width => '50', :height => '20'), root_path %></li>
+              </div>
+              <div class="col-xs-offset-2 col-xs-2 col-md-offset-2 col-md-2">
+                <li><%= link_to image_tag('twitter.png',:width => '30', :height => '30'), root_path %></li>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-offset-3 col-xs-3">
+            <li><%= link_to image_tag('tweet.png', :width => '100', :height => '35'), new_tweet_path %></li>
+          </div>
+        </ul>
+      </div>
+    </div>
   </header>
 <%= yield %>
 

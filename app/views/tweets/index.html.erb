@@ -1,16 +1,61 @@
-<div class="container">
-    <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-        <p><%= notice %></p>
-        <%= link_to "つぶやく", new_tweet_path ,class: 'btn btn-default' %>
-        <h4><%= @tweets.count %>件の新着ツイートを表示</h4>
-        <% @tweets.each do |tweet| %>
-        <div class="row">
-            <h4><strong><%= tweet.content %></strong></h4>
-            <%= tweet.created_at %><br>
-            <%= link_to "編集", edit_tweet_path(tweet.id), class: 'btn btn-default btn-sm btn-success' %>
-            <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: {confirm: '本当に削除してよいですか？' }, class: 'btn brn-default btn-sm btn-danger' %>
-         </div>
-        <% end %>
-        <br>
+<div class="container-fluid">
+  <div class="row" id="header-area-1">
+    <div class="col-xs-12"> </div>
+  </div>
+  <div class="row" id="header-area-2">
+    <div class="col-xs-offset-1 col-xs-10 col-xs-offset-1 col-sm-offset-3 col-sm-6 col-sm-offset-3 col-md-offset-4 col-md-4 col-md-offset-4 ">
+      <div class="row">
+        <div class="col-xs-3" id="child"><p>ツイート<br><%= @tweets.length %></p></div>
+        <div class="col-xs-3" id="child"><p>フォロー<br>10</p></div>
+        <div class="col-xs-3" id="child"><p>フォロワー<br>2</p></div>
+        <div class="col-xs-3" id="child"><p>モーメント<br>0</p></div>
+      </div>
     </div>
+  </div>
+</div>
+<div class="container" id="profile-area">
+    <p><%= notice %></p>
+    <div class="row">
+      <div class="col-xs-4" id="profile">
+        <%= image_tag('icon.png', class: 'img-rounded') %>
+        <h3>suzukiichiro</h3>
+        <p>@ichiro</p>
+        <p>Minato-ku, Tokyo</p>
+        <p>2017年4月に登録</p>
+        <p>誕生日 1970年1月1日</p>
+      </div>
+      <div class="col-xs-8">
+        <div class="row" id="tweet-area">
+          <div class="col-xs-3">
+            <h4 style="text-align:left;">ツイート</h4>
+          </div>
+          <div class="col-xs-6">
+            <a href="#"><h4 style="text-align:left;">ツイートと返信</h4></a>
+          </div>
+          <div class="col-xs-3">
+            <%= link_to "つぶやく", new_tweet_path ,class: 'btn btn-default' %>
+          </div>
+        </div>
+        <% @tweets.each do |tweet| %>
+          <div class="row" id="tweet-area">
+            <div class="col-xs-2">
+                <%= image_tag('icon.png', class: 'img-responsive', id: 'tweet-icon-image') %>
+            </div>
+            <div class="col-xs-10">
+              <div class="col-xs-12 col-md-12">
+                  <p><strong>suzukiichiro</strong>@ichiro<%= tweet.created_at.strftime("%_m月%d日") %></p>
+              </div>
+              <div class="col-xs-6 col-md-6">
+                  <p><%= tweet.content %></p>
+              </div>
+              <div class="col-xs-6 col-md-6">
+                  <%= link_to "編集", edit_tweet_path(tweet.id), class: 'btn btn-default btn-sm btn-success' %>
+                  <%= link_to "削除", tweet_path(tweet.id), method: :delete, data: {confirm: '本当に削除してよいですか？' }, class: 'btn brn-default btn-sm btn-danger' %>
+              </div>
+            </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <br>
 </div>
